@@ -2,7 +2,7 @@ import React from 'react'
 import {ScrollTrigger, SplitText} from 'gsap/all';//these are plugins so we have to register them first.
 import gsap from 'gsap';
 import Navbar from './components/Navbar';
-
+import Hero from './components/Hero';
 
 
 
@@ -11,6 +11,8 @@ const App = () => {
   return (
     <main>
       <Navbar />
+      <Hero />
+      <div className="h-dvh bg-black"></div>
     </main>
   )
 }

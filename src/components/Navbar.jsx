@@ -6,6 +6,9 @@ import { navLinks } from '../constants'
 
 import { useGSAP } from '@gsap/react'
 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const Navbar = () => {
 
   useGSAP(()=>{
@@ -18,12 +21,12 @@ const Navbar = () => {
 
       }
     })
-
+    //this is the animation
     navTween.fromTo('nav',{//start from
       backgroundColor: 'transparent', 
     },{//to
       backgroundColor:'#00000050',//#000000 means black, 50 at the end means 30% in hexadecimal so 30% opacity
-      backgroundFilter: 'blur(10px)',
+      backdropFilter: 'blur(10px)',
       duration: 1,
       ease: 'power1.inOut'
     }
