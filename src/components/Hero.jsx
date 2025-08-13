@@ -18,7 +18,7 @@ const Hero = () => {
     
 
 
-    document.fonts.ready.then(() => {//to make sure that split text is called only when fonts are loaded on the web page first.
+    //to make sure that split text is called only when fonts are loaded on the web page first.
     const heroSplit = new SplitText('.title', {type: 'chars, words'})//this means that we will split the text inside of element that has (.title class)
     // into characters/ words, so that when page loads this ".title" element loads word by word or char by char.
 
@@ -45,7 +45,7 @@ const Hero = () => {
       stagger: 0.06,
       delay:0.5 //delay: 1 means this animation will only start 1 sec after the prev i.e title's animation finishes 
     })
-    })//fonts ready
+    //fonts ready
 
 
 
