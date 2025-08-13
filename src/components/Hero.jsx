@@ -97,21 +97,40 @@ const Hero = () => {
   return (
 
     <>
-    <section id='hero' className='noisy'>
-        <h1 className='title '>MOJITO</h1>
+    <section id='hero' className='noisy '>
+        <h1 className='title mb-[17px] whitespace-nowrap text-[clamp(12px,17vw,17vw)]'>MOJITO</h1> 
+        {/* whitespace-nowrap stops the text in the element to go on the next line when the screen size shrinks, but text will then overflow out of the window
+        so to fix that: text-[clamp(12px,5vw,20px)] 
+        whitespace-nowrap → keeps it one line
+
+        clamp(12px, 5vw, 20px) →
+
+        Min font size → 12px
+
+        Preferred → 5% of viewport width
+
+        Max → 20px
+
+        So as the screen shrinks, 5vw shrinks, and the text size follows along — staying within the min/max range.*/}
         <img src="/images/hero-left-leaf.png" alt="left-leaf" className='left-leaf' />
         <img src="/images/hero-right-leaf.png" alt="right-leaf" className='right-leaf' />
 
-        <div className='body md:absolute top-[40vh] left-[50vw] '>
+        <div className='body mt-6'>
           <div className="content mt-4 pb-0">
             
-            <div className=" hidden md:block md:mb-0 mt-6 mb-0"> {/*hidden on small devices,and displayed as block on medium devices! */}
+            <div className="hidden md:block mt-6 mb-0"> {/*hidden on small devices,and displayed as block on medium devices! */}
                 <p className='subtitle'>Cool. Crisp. Classic.</p>
                 <p className="subtitle">Sip The Spirit <br /> of Summer!</p>  
             </div>
 
-            <div className='view-cocktails md:mt-0 '>
-              <p className="subtitle">Every cocktail on our menu is a blend of premium ingredients, creative flair, and timeless recipes — designed to delight your senses.</p>
+                {/* text-[min(5vw,20px)]
+                If 5% of viewport width is less than 20px → use 5vw.
+
+                If it’s greater than 20px → use 20px.
+
+                */}
+            <div className='view-cocktails md:mt-0  '>
+              <p className="subtitle max-[639px]:hidden">Every cocktail on our menu is a blend of premium ingredients, creative flair, and timeless recipes — designed to delight your senses.</p>
               <a className='subtitle' href="#cocktails">View Cocktails</a>
             </div>
           
@@ -119,7 +138,15 @@ const Hero = () => {
         </div>
     </section>
     <div className='video absolute inset-0'>
-      {/* playInline hides all the controls like play pause mute timer, and preload loads the vid automatically when the page loads.*/}
+      {/* playInline hides all the controls like play pause mute timer, and preload loads the vid automatically when the page loads. 
+      inset-0 means that element will take 0 space from all 4 sides of it's container, think of it like padding, but this time 
+      In Tailwind, inset is just a shorthand for top, right, bottom, left — so to give different values for each side, you can’t do it in one inset-* class, you combine the individual top-*, right-*, bottom-*, left-* utilities.
+
+      Example
+
+      <div class="absolute top-2 right-4 bottom-6 left-8"></div>
+      it means that div will take 2px distance from top, 4 from right 6from bottom and 8 from left of it's container.
+      */}
       <video src="/videos/output.mp4" muted playsInline preload='auto' ref={videoRef}/>
     </div>
     </>
