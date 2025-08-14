@@ -261,12 +261,12 @@ body {
         }
 
         .cocktail-img {
-            @apply md:w-[60vw] w-full h-[50vh] md:h-[60vh] rounded-4xl overflow-hidden absolute top-0 md:top-[5vh] md:-translate-y-1/2 left-1/2 -translate-x-1/2;
+            @apply md:w-[50vw] w-full h-[50vh] md:h-[60vh] rounded-4xl overflow-hidden absolute top-0 md:top-[5vh] md:-translate-y-1/2 left-1/2 -translate-x-1/2;
         }
 
         .masked-container {
             h2 {
-                @apply text-4xl md:text-5xl font-modern-negra text-center mb-10 text-white mt-32;
+                @apply text-4xl md:text-5xl font-modern-negra text-center mb-10 text-white ;
             }
 
             div {

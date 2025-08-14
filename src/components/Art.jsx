@@ -28,7 +28,7 @@ const Art = () => {
       stagger: 0.2,//fade them one-by-one
       ease: 'power1.inOut'
     }).to('.masked-img',{
-      scale:1.3,
+      scale:1.4,
       maskPosition: 'center',
       maskSize: '400%',
       duration:1,
@@ -43,7 +43,7 @@ const Art = () => {
       opacity:1,
       duration:1,
       ease:'power1.inOut',
-      yPercent:-20 //here there's no translate in y direction atleast.
+      yPercent:-5 //here there's no translate in y direction atleast.
     })
   },[])
 
@@ -73,6 +73,7 @@ const Art = () => {
                 {/*object-contain The image scales down to fit inside the container, keeping its aspect ratio. See the masked img class too! */}
               </div>
 
+{/* we have a rotate property + x&y properties, we could create something like a pendulum animation  */}
               <ul className="space-y-4 will-fade">
                 {featureLists.map((feature, index)=>(
                   <li key={index} className='flex items-center justify-start gap-2'>
@@ -83,7 +84,7 @@ const Art = () => {
               </ul>
             </div>
             <div className="masked-container">
-              <h2 className="will-fade mt-200px top-[-30px]">Sip-Worthy Perfection</h2>
+              <h2 className="will-fade mt-20px ">Sip-Worthy Perfection</h2>
               <div id="masked-content">
                 <h3>Made with Craft, Poured with Passion</h3>
                 <p>This isn't just a drink. It's a carefully crafted moment made just for you.</p>
