@@ -8,7 +8,7 @@ const Art = () => {
   const isMobile = useMediaQuery({maxWidth:767})
 
   useGSAP(()=>{
-    const start = isMobile?'top top':'top -8%'; //top top means as soon as element's top hit's top of viewport(REMEMBER, viewport is NOT the whole page!, it is ONLY what we see CURRENTLY ON THE WINDOW), so the animation will start as soon as the element is visible
+    const start = isMobile?'top top':'top -1%'; //top top means as soon as element's top hit's top of viewport(REMEMBER, viewport is NOT the whole page!, it is ONLY what we see CURRENTLY ON THE WINDOW), so the animation will start as soon as the element is visible
 
 
     const maskTimeline = gsap.timeline({
@@ -35,7 +35,7 @@ const Art = () => {
       ease: 'power1.inOut'
 
     }).to('.cocktail-img',{
-      yPercent:-20, //y won't work cuz GSAP always treats y as additive to whatever is currently set, so depending on your transform origin and rendering
+      yPercent:-70, //y won't work cuz GSAP always treats y as additive to whatever is currently set, so depending on your transform origin and rendering
       //we had translate-y-1/2 in index.css already.
       //and we already had transform property on .cocktail-img, 
       //but yPercent is independent of previous transform values as it's calculated fresh against the element's size, not current transform values.
@@ -49,7 +49,7 @@ const Art = () => {
 
   return (
     <div id='art' className='z-1'>
-        <div className="container mx-auto h-full pt-20 bottom-0">
+        <div className="container mx-auto h-full pt-10 bottom-0">
             <h2 className='will-fade z-1'>The Art</h2>
 
             <div className="content bottom-0">
@@ -67,14 +67,14 @@ const Art = () => {
                 ))}
               </ul>
 
-              <div className="cocktail-img mb-[100px] ">
+              <div className="cocktail-img">
                 {/* abs-center: absolute center. */}
                 <img src="/images/under-img.jpg" alt="cocktail" className='abs-center masked-img size-full object-contain' />
                 {/*object-contain The image scales down to fit inside the container, keeping its aspect ratio. See the masked img class too! */}
               </div>
 
 {/* we have a rotate property + x&y properties, we could create something like a pendulum anima  */}
-              <ul className="space-y-4 will-fade">
+              <ul className="space-y-6 will-fade">
                 {featureLists.map((feature, index)=>(
                   <li key={index} className='flex items-center justify-start gap-2'>
                     <img src="/images/check.png" alt="check" />
@@ -84,7 +84,7 @@ const Art = () => {
               </ul>
             </div>
             <div className="masked-container">
-              <h2 className="will-fade mt-20px ">Sip-Worthy Perfection</h2>
+              <h2 className="will-fade mt-50vh ">Sip-Worthy Perfection</h2>
               <div id="masked-content">
                 <h3>Made with Craft, Poured with Passion</h3>
                 <p>This isn't just a drink. It's a carefully crafted moment made just for you.</p>

@@ -31,15 +31,15 @@ const Menu = () => {
             
         }).to('#m-right-leaf',{
             
-            x:-1600
+            x:-2200
         }).to('#m-left-leaf',{
-            x:1600
+            x:2200
         })
 
         gsap.timeline({
             scrollTrigger:{
                 trigger:'.cocktail-tabs',
-                start:'top 11%',
+                start:'top 9%',
                 end:'bottom top',
                 scrub: true,
                 pin: true
