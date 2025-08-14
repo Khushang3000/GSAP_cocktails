@@ -48,7 +48,7 @@ const Art = () => {
   },[])
 
   return (
-    <div id='art'>
+    <div id='art' className='z-1'>
         <div className="container mx-auto h-full pt-20 bottom-0">
             <h2 className='will-fade z-1'>The Art</h2>
 
@@ -73,7 +73,7 @@ const Art = () => {
                 {/*object-contain The image scales down to fit inside the container, keeping its aspect ratio. See the masked img class too! */}
               </div>
 
-{/* we have a rotate property + x&y properties, we could create something like a pendulum animation  */}
+{/* we have a rotate property + x&y properties, we could create something like a pendulum anima  */}
               <ul className="space-y-4 will-fade">
                 {featureLists.map((feature, index)=>(
                   <li key={index} className='flex items-center justify-start gap-2'>

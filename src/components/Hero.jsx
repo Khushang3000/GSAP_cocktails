@@ -12,7 +12,7 @@ const Hero = () => {
   const videoRef = useRef();
 
     //checking if the device is a mobile.
-  const isMobile = useMediaQuery({maxWidth:767})//if it's less than 767px then it will be mobile. now below the gsap timeline where we have animated right and left leaves, and we'll decide where the animation for the video will start and end
+  const isMobile = useMediaQuery({maxWidth:636})//if it's less than 767px then it will be mobile. now below the gsap timeline where we have animated right and left leaves, and we'll decide where the animation for the video will start and end
   useGSAP(()=>{
     
     
@@ -54,15 +54,16 @@ const Hero = () => {
         trigger: '#hero',
         start: 'top top', //1st top for element, 2nd top for screen
         end:'bottom top',
-        scrub: true //so that animation completely depends on scroll
+        scrub: true, //so that animation completely depends on scroll
+      
       }
     }).to('.right-leaf',{y:200},0)//right leaf should go down, 3rd parameter is after how much time should the tween start
     .to('.left-leaf',{y:-200}, 0)//left leaf should go up 
 
 
 
-    const startValue =isMobile?'top 50%':'center 60%'; //when element's center hits 60% of the viewport, truthy value is for mobile.
-    const endValue =isMobile?'120% top':'bottom top'//when element's bottom hits top of the viewport, truthy value is for mobile.
+    const startValue =isMobile?'bottom bottom':'center 60%'; //when element's center hits 60% of the viewport, truthy value is for mobile.
+    const endValue =isMobile?'bottom -48%':'bottom top'//when element's bottom hits top of the viewport, truthy value is for mobile.
     //when the top of the video element goes past 195% below the top of the screen, end animation
     //for mobile applications it will be different cuz there's less space.
     
