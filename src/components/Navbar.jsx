@@ -8,6 +8,7 @@ import { useGSAP } from '@gsap/react'
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+// Once a plugin is registered anywhere in your app, GSAP remembers it globally.
 
 const Navbar = () => {
 

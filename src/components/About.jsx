@@ -39,15 +39,16 @@ const About = () => {
 
         scrollTimeline.from(titleSplit.words,{
             opacity:0,
-            duration: 1,
+            duration: 0.7,
             yPercent: 100, //move an element relative to it's own size instead of fixed pixels, in this case y-direction, there's also an xPercent
             stagger: 0.02
         }).from('.top-grid div, .bottom-grid div',{ //we are targeting divs inside .top-grid and divs inside .bottom-grid together.
+            delay:0.4,
             opacity:0,
             duration:1,
             ease: 'power1.inOut',
             stagger: 0.04
-        },'-=0.5')//starts the animation for top and bottom gird divs before the animation of titleSplitWords end!!!
+        },'-=0.5')//starts the animation for top and bottom gird divs half a sec before the animation of titleSplitWords end!!!
         //basically some part of 2nd animation will overlap over the first.
 
 
