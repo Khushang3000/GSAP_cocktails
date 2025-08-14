@@ -62,8 +62,8 @@ const Hero = () => {
 
 
 
-    const startValue =isMobile?'bottom bottom':'center 60%'; //when element's center hits 60% of the viewport, truthy value is for mobile.
-    const endValue =isMobile?'bottom -48%':'bottom top'//when element's bottom hits top of the viewport, truthy value is for mobile.
+    const startValue =isMobile?'120% 110%':'center 60%'; //when element's center hits 60% of the viewport, truthy value is for mobile.
+    const endValue =isMobile?'bottom -37%':'bottom top'//when element's bottom hits top of the viewport, truthy value is for mobile.
     //when the top of the video element goes past 195% below the top of the screen, end animation
     //for mobile applications it will be different cuz there's less space.
     
