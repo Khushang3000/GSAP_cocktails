@@ -8,12 +8,14 @@ import { allCocktails } from '../constants'
 import { useState, useRef } from 'react'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { useMediaQuery } from 'react-responsive'
 
+import Hero from './Hero';
 
 const Menu = () => {
 
     
-
+    const isMobile = useMediaQuery({maxWidth:636})
     const contentRef = useRef();
     const [currentIndex, setcurrentIndex] = useState(0);
     
@@ -39,7 +41,7 @@ const Menu = () => {
         gsap.timeline({
             scrollTrigger:{
                 trigger:'.cocktail-tabs',
-                start:'top 9%',
+                start:isMobile?'top 20%':'top 9%',
                 end:'bottom top',
                 scrub: true,
                 pin: true
@@ -73,8 +75,8 @@ const Menu = () => {
     <section id="menu" className='z-1' aria-labelledby='menu-heading'>
     
 
-    <img src="/images/apple.png" className=' w-[200px] h-[200px] left-[-12vw] z-0' alt="left-leaf" id='m-left-leaf' />
-    <img src="/images/mango.png" className=' w-[200px] h-[200px] z-0 right-[-12vw]' alt="right-leaf" id='m-right-leaf' />
+    <img src="/images/apple.png" className='hidden md:block w-[200px] h-[200px] left-[-12vw] z-0' alt="left-leaf" id='m-left-leaf' />
+    <img src="/images/mango.png" className='hidden md:block w-[200px] h-[200px] z-0 right-[-12vw]' alt="right-leaf" id='m-right-leaf' />
 
 
     <h2 id="menu-heading" className='sr-only'>Cocktail Menu</h2>
